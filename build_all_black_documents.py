@@ -99,7 +99,7 @@ def build_black_ats_cv(lang='id', pages=2):
     t_role = "FULLSTACK WEB DEVELOPER & SOFTWARE ENGINEER" if lang == 'id' else "FULL-STACK WEB DEVELOPER & SOFTWARE ENGINEER"
     story.append(Paragraph(t_role, st['Title']))
     story.append(Spacer(1, 1))
-    story.append(Paragraph("Bandung, Indonesia &bull; +62 813-6064-0668 &bull; yoginara2004@gmail.com &bull; github.com/Yoginara &bull; linkedin.com/in/yoginara", st['Contact']))
+    story.append(Paragraph('Bandung, Indonesia &bull; +62 813-6064-0668 &bull; yoginara2004@gmail.com &bull; <a href="https://github.com/Yoginara"><font color="#000000">github.com/Yoginara</font></a> &bull; <a href="https://yoginara.github.io/cv_yogiganteng/"><font color="#000000">yoginara.github.io/cv_yogiganteng</font></a>', st['Contact']))
     story.append(Spacer(1, 2.5))
 
     if lang == 'id':
@@ -396,8 +396,8 @@ def build_black_master_portfolio(lang='id'):
     t_sub = "Full-Stack Web Developer & Software Engineer | Applied Informatics Engineering ULBI" if lang == 'en' else "Fullstack Web Developer & Software Engineer | Sarjana Terapan Komputer ULBI"
     
     hdr = Table([
-        [Paragraph(t_doc, pst['CoverSubtitle']), Paragraph("Yoginara.dev &bull; 2026", ParagraphStyle('HR', fontName='Helvetica-Bold', fontSize=8, textColor=BLACK, alignment=TA_RIGHT))],
-        [Paragraph(t_cand, pst['CoverTitle']), Paragraph("Status: Fresh Graduate 2026", ParagraphStyle('ST', fontName='Helvetica-Bold', fontSize=8, textColor=BLACK, alignment=TA_RIGHT))],
+        [Paragraph(t_doc, pst['CoverSubtitle']), Paragraph('<a href="https://yoginara.github.io/cv_yogiganteng/"><font color="#000000">yoginara.github.io/cv_yogiganteng</font></a>', ParagraphStyle('HR', fontName='Helvetica-Bold', fontSize=8, textColor=BLACK, alignment=TA_RIGHT))],
+        [Paragraph(t_cand, pst['CoverTitle']), Paragraph("", ParagraphStyle('ST', fontName='Helvetica-Bold', fontSize=8, textColor=BLACK, alignment=TA_RIGHT))],
         [Paragraph(t_sub, pst['CardSub']), Paragraph("Bandung, Jawa Barat, ID", ParagraphStyle('LC', fontName='Helvetica', fontSize=8, textColor=BLACK, alignment=TA_RIGHT))]
     ], colWidths=[385, 138])
     hdr.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'MIDDLE'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 1)]))
