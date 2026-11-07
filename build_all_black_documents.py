@@ -106,7 +106,7 @@ def build_black_ats_cv(lang='id', pages=2):
         # Summary
         story.extend(add_sec("Ringkasan Profil"))
         story.append(Paragraph(
-            "Sarjana Terapan Teknik Informatika (IPK 3,56 / 4,00) dari Universitas Logistik & Bisnis Internasional (ULBI) dengan spesialisasi Fullstack Web Development dan arsitektur backend enterprise. Berpengalaman menangani sistem e-GRC korporat skala 116.000+ LoC di BUMD Tirta Raharja, merancang algoritma kalkulasi risiko dinamis ISO 31000:2018, serta mengoptimalkan pelaporan hingga efisiensi 85%. Menguasai Laravel 12, CodeIgniter 3, Golang Fiber, basis data relasional (MySQL, Oracle OCI8) dan NoSQL (MongoDB), TDD (PHPUnit 11), serta tersertifikasi resmi BNSP Teknisi Muda Jaringan Komputer aktif hingga 2029.",
+            "Sarjana Terapan Teknik Informatika (IPK 3,56 / 4,00) dari Universitas Logistik & Bisnis Internasional (ULBI) dengan spesialisasi Fullstack Web Development dan arsitektur backend enterprise. Berpengalaman menangani sistem e-GRC korporat skala 116.000+ LoC di BUMD Tirta Raharja, merancang algoritma kalkulasi risiko dinamis ISO 31000:2018, serta mengoptimalkan pelaporan hingga efisiensi 85%. Menguasai Laravel 12, CodeIgniter 3, Golang Fiber, sistem Linux (CachyOS, CLI, Bash Scripting), basis data relasional (MySQL, Oracle OCI8) dan NoSQL (MongoDB), TDD (PHPUnit 11), serta tersertifikasi resmi BNSP Teknisi Muda Jaringan Komputer aktif hingga 2029.",
             st['Summary']
         ))
         story.append(Spacer(1, 1.5))
@@ -135,26 +135,27 @@ def build_black_ats_cv(lang='id', pages=2):
         # Projects
         story.extend(add_sec("Proyek Rekayasa Perangkat Lunak Utama"))
         p1 = Table([
-            [Paragraph("<b>CMI Content Management System & Database Query Optimization</b>", st['JobTitle']), Paragraph("Nov 2026", st['DateLoc'])],
-            [Paragraph("Laravel 12.0 &bull; PHP 8.2+ &bull; Tailwind CSS v3 &bull; SQLite/MySQL &bull; PHPUnit 11", st['Company']), Paragraph("Arsitektur Enterprise", st['DateLoc'])]
+            [Paragraph("<b>SIMRS Medika — Sistem Informasi Manajemen Rumah Sakit Terpadu (MVP)</b>", st['JobTitle']), Paragraph("Nov 2026", st['DateLoc'])],
+            [Paragraph("Laravel 12.x &bull; Tailwind CSS 4 &bull; Alpine.js &bull; Spatie RBAC &bull; Google OAuth 2.0 &bull; PHPUnit", st['Company']), Paragraph("Standar Faskes (Permenkes 24/2022)", st['DateLoc'])]
         ], colWidths=col_w)
         p1.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
         story.append(p1)
         story.append(Spacer(1, 0.75))
-        story.append(Paragraph("&bull; Membangun portal artikel dengan proteksi otorisasi kepemilikan (Laravel Policy anti-IDOR), generator slug unik otomatis, dan manajemen siklus berkas Flysystem.", st['Bullet']))
-        story.append(Paragraph("&bull; Mengoptimalkan performa kueri basis data via Query Builder <b>INNER JOIN</b>, aliasing, serta paginasi 10 record dengan alokasi memori PHP terkontrol <b>&lt; 8 MB</b>.", st['Bullet']))
-        story.append(Paragraph("&bull; Mencapai kelulusan <b>100% Green (39 automated unit & feature tests, 134 assertions)</b> dengan PHPUnit 11 serta mitigasi OWASP Top 10.", st['Bullet']))
+        story.append(Paragraph("&bull; Mengembangkan alur rawat jalan end-to-end (Front Office antrean & NIK generator No. RM unik, Dokter RME ICD-10 Permenkes 24/2022, Farmasi, Kasir billing) dengan mesin status terintegrasi.", st['Bullet']))
+        story.append(Paragraph("&bull; Mengamankan transaksi farmasi berkonkurensi tinggi dari race condition dan stok minus menggunakan <b>Pessimistic Locking (lockForUpdate())</b> dalam transaksi database ACID.", st['Bullet']))
+        story.append(Paragraph("&bull; Mengintegrasikan dual-authentication dengan <b>Enterprise Whitelist Google OAuth 2.0</b> (khusus staf faskes) serta meraih kelulusan <b>100% Green (14 Test Cases &bull; 77 Assertions)</b>.", st['Bullet']))
         story.append(Spacer(1, 1.5))
 
         p2 = Table([
-            [Paragraph("<b>StepUp & ManukShop Platform — High-Throughput REST API Microservices</b>", st['JobTitle']), Paragraph("2026", st['DateLoc'])],
-            [Paragraph("Golang 1.22 &bull; GoFiber v2 (FastHTTP) &bull; MongoDB Atlas &bull; JWT &bull; Swagger", st['Company']), Paragraph("Mikroservis Backend", st['DateLoc'])]
+            [Paragraph("<b>CMI Content Management System & Database Query Optimization</b>", st['JobTitle']), Paragraph("Nov 2026", st['DateLoc'])],
+            [Paragraph("Laravel 12.0 &bull; PHP 8.2+ &bull; Tailwind CSS v3 &bull; SQLite/MySQL &bull; PHPUnit 11", st['Company']), Paragraph("Arsitektur Enterprise", st['DateLoc'])]
         ], colWidths=col_w)
         p2.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
         story.append(p2)
         story.append(Spacer(1, 0.75))
-        story.append(Paragraph("&bull; Merancang microservice backend RESTful dengan konkurensi tinggi dan latensi sub-milidetik ditenagai core fasthttp GoFiber untuk katalog produk dan transaksi e-commerce.", st['Bullet']))
-        story.append(Paragraph("&bull; Mengimplementasikan otentikasi JWT, hashing kata sandi Bcrypt, pola embedded snapshot NoSQL MongoDB, serta dokumentasi interaktif Swagger.", st['Bullet']))
+        story.append(Paragraph("&bull; Membangun portal artikel dengan proteksi otorisasi kepemilikan (Laravel Policy anti-IDOR), generator slug unik otomatis, dan manajemen siklus berkas Flysystem.", st['Bullet']))
+        story.append(Paragraph("&bull; Mengoptimalkan performa kueri basis data via Query Builder <b>INNER JOIN</b>, aliasing, serta paginasi 10 record dengan alokasi memori PHP terkontrol <b>&lt; 8 MB</b>.", st['Bullet']))
+        story.append(Paragraph("&bull; Mencapai kelulusan <b>100% Green (39 automated unit & feature tests, 134 assertions)</b> dengan PHPUnit 11 serta mitigasi OWASP Top 10.", st['Bullet']))
 
         if pages == 2:
             story.append(PageBreak())
@@ -162,22 +163,43 @@ def build_black_ats_cv(lang='id', pages=2):
         # Page 2 content (or continued)
         story.extend(add_sec("Proyek Rekayasa Lanjutan & Riset" if pages == 2 else "Proyek Tambahan"))
         p3 = Table([
-            [Paragraph("<b>RTConnect — Sistem Administrasi Digital & Smart Community Management</b>", st['JobTitle']), Paragraph("2026", st['DateLoc'])],
-            [Paragraph("PHP Fullstack &bull; MySQL (15+ Relational Tables) &bull; Bootstrap 5 &bull; Public Validator", st['Company']), Paragraph("E-Government", st['DateLoc'])]
+            [Paragraph("<b>StepUp & ManukShop Platform — High-Throughput REST API Microservices</b>", st['JobTitle']), Paragraph("2026", st['DateLoc'])],
+            [Paragraph("Golang 1.22 &bull; GoFiber v2 (FastHTTP) &bull; MongoDB Atlas &bull; JWT &bull; Swagger", st['Company']), Paragraph("Mikroservis Backend", st['DateLoc'])]
         ], colWidths=col_w)
         p3.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
         story.append(p3)
         story.append(Spacer(1, 0.75))
+        story.append(Paragraph("&bull; Merancang microservice backend RESTful dengan konkurensi tinggi dan latensi sub-milidetik ditenagai core fasthttp GoFiber untuk katalog produk dan transaksi e-commerce.", st['Bullet']))
+        story.append(Paragraph("&bull; Mengimplementasikan otentikasi JWT, hashing kata sandi Bcrypt, pola embedded snapshot NoSQL MongoDB, serta dokumentasi interaktif Swagger.", st['Bullet']))
+        story.append(Spacer(1, 1.5))
+
+        p_rsonline = Table([
+            [Paragraph("<b>RS Online — Sistem Pendaftaran Pasien & Audit Keamanan Siber</b>", st['JobTitle']), Paragraph("2026", st['DateLoc'])],
+            [Paragraph("PHP &bull; MariaDB &bull; PDO Prepared Statements &bull; SAST Vulnerability Assessment &bull; Bootstrap 5", st['Company']), Paragraph("Arsitektur Web & Keamanan", st['DateLoc'])]
+        ], colWidths=col_w)
+        p_rsonline.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
+        story.append(p_rsonline)
+        story.append(Spacer(1, 0.75))
+        story.append(Paragraph("&bull; Mengembangkan portal pendaftaran pasien mandiri dan loket antrean poliklinik, melakukan audit SAST manual celah SQL Injection (CVSS 9.8), serta merancang refactoring arsitektur ke PDO Prepared Statements dan mitigasi OWASP Top 10 sesuai UU Perlindungan Data Pribadi (UU PDP 27/2022).", st['Bullet']))
+        story.append(Spacer(1, 1.5))
+
+        p4 = Table([
+            [Paragraph("<b>RTConnect — Sistem Administrasi Digital & Smart Community Management</b>", st['JobTitle']), Paragraph("2026", st['DateLoc'])],
+            [Paragraph("PHP Fullstack &bull; MySQL (15+ Relational Tables) &bull; Bootstrap 5 &bull; Public Validator", st['Company']), Paragraph("E-Government", st['DateLoc'])]
+        ], colWidths=col_w)
+        p4.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
+        story.append(p4)
+        story.append(Spacer(1, 0.75))
         story.append(Paragraph("&bull; Mengembangkan platform tata kelola komunitas cerdas berbasis web untuk penagihan iuran warga, verifikasi kas lingkungan real-time, dan penerbitan surat pengantar resmi ber-validator publik.", st['Bullet']))
-        
+
         if pages == 2:
             story.append(Spacer(1, 1.5))
-            p4 = Table([
+            p5 = Table([
                 [Paragraph("<b>CIT-TPRO: Convolution Interactive Transformer Deep Learning</b>", st['JobTitle']), Paragraph("2026", st['DateLoc'])],
                 [Paragraph("Python &bull; PyTorch &bull; Linear Self-Attention O(N) &bull; EEG Biomedical Signal Fusion", st['Company']), Paragraph("Riset AI", st['DateLoc'])]
             ], colWidths=col_w)
-            p4.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
-            story.append(p4)
+            p5.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
+            story.append(p5)
             story.append(Spacer(1, 0.75))
             story.append(Paragraph("&bull; Riset arsitektur Transformer dengan perhatian linier O(N) dan fusi fitur PSD+DE untuk klasifikasi sinyal gelombang otak (EEG) pada benchmark dataset internasional (DEAP, DREAMER).", st['Bullet']))
 
@@ -214,12 +236,12 @@ def build_black_ats_cv(lang='id', pages=2):
         # Skills
         story.extend(add_sec("Keahlian Teknis (Technical Skills Matrix)"))
         skills = [
-            ("Bahasa Pemrograman:", "PHP (8.x), Go (Golang 1.22), JavaScript (ES6+), Python, SQL, HTML5, CSS3"),
+            ("Bahasa Pemrograman:", "PHP (8.x), Go (Golang 1.22), JavaScript (ES6+), Python, Bash/Shell, SQL, HTML5, CSS3"),
             ("Framework & Library:", "Laravel 12.x, CodeIgniter 3 MVC, GoFiber v2, Tailwind CSS v3, Bootstrap 5, jQuery, Blade"),
             ("Basis Data & Storage:", "MySQL, MariaDB, Oracle Database (OCI8), MongoDB Atlas (NoSQL), SQLite, ADODB Driver"),
             ("Pengujian & Keamanan:", "PHPUnit 11 (TDD/Automated Testing), OWASP Top 10 Mitigation, CSRF, XSS Escaping, IDOR"),
-            ("Jaringan & Infrastruktur:", "BNSP Certified Network Technician, TCP/IP, IP Addressing, Switching, Structured Cabling"),
-            ("Tools & Metodologi:", "Git, GitHub, RESTful API, Postman, Swagger/OpenAPI, Composer, NPM, Linux Environment")
+            ("Sistem & Jaringan:", "Linux OS (CachyOS, CLI, Bash Scripting), BNSP Network Technician, TCP/IP, Switching"),
+            ("Tools & Metodologi:", "Git, GitHub, RESTful API, Postman, Swagger/OpenAPI, Composer, NPM, Linux CLI")
         ]
         for cat, val in skills:
             sk_row = Table([[Paragraph(cat, st['SkillCat']), Paragraph(val, st['SkillVal'])]], colWidths=[135, 400] if pages == 1 else [135, 396])
@@ -230,7 +252,7 @@ def build_black_ats_cv(lang='id', pages=2):
         # Summary (EN)
         story.extend(add_sec("Profile Summary"))
         story.append(Paragraph(
-            "Applied Bachelor of Informatics Engineering graduate (GPA: 3.56 / 4.00) from Universitas Logistik & Bisnis Internasional (ULBI), specializing in full-stack web development and scalable backend architecture. Proven production track record at regional utility BUMD maintaining a 116,000+ LoC codebase, engineering dynamic ISO 31000:2018 residual risk algorithms, and boosting reporting efficiency by 85%. Proficient in Laravel 12, CodeIgniter 3, Go (GoFiber), relational (MySQL, Oracle OCI8) and NoSQL (MongoDB) database optimization, test-driven development (PHPUnit 11), and OWASP Top 10 security. Officially certified by BNSP as a First-Level Computer Network Technician (valid 2026–2029).",
+            "Applied Bachelor of Informatics Engineering graduate (GPA: 3.56 / 4.00) from Universitas Logistik & Bisnis Internasional (ULBI), specializing in full-stack web development and scalable backend architecture. Proven production track record at regional utility BUMD maintaining a 116,000+ LoC codebase, engineering dynamic ISO 31000:2018 residual risk algorithms, and boosting reporting efficiency by 85%. Proficient in Laravel 12, CodeIgniter 3, Go (GoFiber), Linux OS (CachyOS, CLI, Bash Scripting), relational (MySQL, Oracle OCI8) and NoSQL (MongoDB) databases, test-driven development (PHPUnit 11), and OWASP Top 10 security. Officially certified by BNSP as a First-Level Computer Network Technician (valid 2026–2029).",
             st['Summary']
         ))
         story.append(Spacer(1, 1.5))
@@ -259,26 +281,27 @@ def build_black_ats_cv(lang='id', pages=2):
         # Projects (EN)
         story.extend(add_sec("Key Software Engineering Projects"))
         p1 = Table([
-            [Paragraph("<b>CMI Content Management System & Database Query Optimization</b>", st['JobTitle']), Paragraph("Nov 2026", st['DateLoc'])],
-            [Paragraph("Laravel 12.0 &bull; PHP 8.2+ &bull; Tailwind CSS v3 &bull; SQLite/MySQL &bull; PHPUnit 11", st['Company']), Paragraph("Enterprise Architecture", st['DateLoc'])]
+            [Paragraph("<b>SIMRS Medika — Integrated Hospital Management System (MVP)</b>", st['JobTitle']), Paragraph("Nov 2026", st['DateLoc'])],
+            [Paragraph("Laravel 12.x &bull; Tailwind CSS 4 &bull; Alpine.js &bull; Spatie RBAC &bull; Google OAuth 2.0 &bull; PHPUnit", st['Company']), Paragraph("Healthcare Standard (Permenkes 24/2022)", st['DateLoc'])]
         ], colWidths=col_w)
         p1.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
         story.append(p1)
         story.append(Spacer(1, 0.75))
-        story.append(Paragraph("&bull; Architected an article publishing platform featuring granular ownership authorization (Laravel Policy anti-IDOR), collision-free sequential slug generation, and Flysystem media lifecycle management.", st['Bullet']))
-        story.append(Paragraph("&bull; Optimized relational query throughput using Query Builder <b>INNER JOIN</b>, column aliasing, and 10-record pagination maintaining low memory footprint <b>&lt; 8 MB</b>.", st['Bullet']))
-        story.append(Paragraph("&bull; Achieved <b>100% Green test suite (39 automated unit & feature tests, 134 assertions)</b> using PHPUnit 11 alongside OWASP Top 10 mitigation.", st['Bullet']))
+        story.append(Paragraph("&bull; Engineered an end-to-end outpatient healthcare management workflow (Front Office, Doctor EMR ICD-10 under Permenkes 24/2022, Pharmacy, Cashier) via an integrated state machine.", st['Bullet']))
+        story.append(Paragraph("&bull; Prevented race conditions and negative inventory during concurrent dispensing by enforcing <b>Pessimistic Locking (lockForUpdate())</b> within ACID database transactions.", st['Bullet']))
+        story.append(Paragraph("&bull; Implemented dual-auth security with an <b>Enterprise Google OAuth 2.0 Whitelist</b> for medical staff, verified by a <b>100% passing automated test suite (14 test cases, 77 assertions)</b>.", st['Bullet']))
         story.append(Spacer(1, 1.5))
 
         p2 = Table([
-            [Paragraph("<b>StepUp & ManukShop Platform — High-Throughput REST API Microservices</b>", st['JobTitle']), Paragraph("2026", st['DateLoc'])],
-            [Paragraph("Go (Golang 1.22) &bull; GoFiber v2 (FastHTTP) &bull; MongoDB Atlas &bull; JWT &bull; Swagger", st['Company']), Paragraph("Backend Microservice", st['DateLoc'])]
+            [Paragraph("<b>CMI Content Management System & Database Query Optimization</b>", st['JobTitle']), Paragraph("Nov 2026", st['DateLoc'])],
+            [Paragraph("Laravel 12.0 &bull; PHP 8.2+ &bull; Tailwind CSS v3 &bull; SQLite/MySQL &bull; PHPUnit 11", st['Company']), Paragraph("Enterprise Architecture", st['DateLoc'])]
         ], colWidths=col_w)
         p2.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
         story.append(p2)
         story.append(Spacer(1, 0.75))
-        story.append(Paragraph("&bull; Constructed high-concurrency RESTful microservices with sub-millisecond response latency powered by GoFiber fasthttp core for high-throughput product catalog and transactions.", st['Bullet']))
-        story.append(Paragraph("&bull; Implemented JWT authentication, Bcrypt password hashing, MongoDB embedded snapshots, and OpenAPI/Swagger documentation.", st['Bullet']))
+        story.append(Paragraph("&bull; Architected an article publishing platform featuring granular ownership authorization (Laravel Policy anti-IDOR), collision-free sequential slug generation, and Flysystem media lifecycle management.", st['Bullet']))
+        story.append(Paragraph("&bull; Optimized relational query throughput using Query Builder <b>INNER JOIN</b>, column aliasing, and 10-record pagination maintaining low memory footprint <b>&lt; 8 MB</b>.", st['Bullet']))
+        story.append(Paragraph("&bull; Achieved <b>100% Green test suite (39 automated unit & feature tests, 134 assertions)</b> using PHPUnit 11 alongside OWASP Top 10 mitigation.", st['Bullet']))
 
         if pages == 2:
             story.append(PageBreak())
@@ -286,22 +309,43 @@ def build_black_ats_cv(lang='id', pages=2):
         # Page 2 (EN)
         story.extend(add_sec("Additional Engineering & Research Projects" if pages == 2 else "Additional Projects"))
         p3 = Table([
-            [Paragraph("<b>RTConnect — Digital Community Administration & Public Validator</b>", st['JobTitle']), Paragraph("2026", st['DateLoc'])],
-            [Paragraph("PHP Fullstack &bull; MySQL (15+ Relational Tables) &bull; Bootstrap 5 &bull; QR Validator", st['Company']), Paragraph("E-Government", st['DateLoc'])]
+            [Paragraph("<b>StepUp & ManukShop Platform — High-Throughput REST API Microservices</b>", st['JobTitle']), Paragraph("2026", st['DateLoc'])],
+            [Paragraph("Go (Golang 1.22) &bull; GoFiber v2 (FastHTTP) &bull; MongoDB Atlas &bull; JWT &bull; Swagger", st['Company']), Paragraph("Backend Microservice", st['DateLoc'])]
         ], colWidths=col_w)
         p3.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
         story.append(p3)
+        story.append(Spacer(1, 0.75))
+        story.append(Paragraph("&bull; Constructed high-concurrency RESTful microservices with sub-millisecond response latency powered by GoFiber fasthttp core for high-throughput product catalog and transactions.", st['Bullet']))
+        story.append(Paragraph("&bull; Implemented JWT authentication, Bcrypt password hashing, MongoDB embedded snapshots, and OpenAPI/Swagger documentation.", st['Bullet']))
+        story.append(Spacer(1, 1.5))
+
+        p_rsonline_en = Table([
+            [Paragraph("<b>RS Online — Patient Registration Platform & SAST Security Hardening</b>", st['JobTitle']), Paragraph("2026", st['DateLoc'])],
+            [Paragraph("PHP &bull; MariaDB &bull; PDO Prepared Statements &bull; SAST Security Audit &bull; Bootstrap 5", st['Company']), Paragraph("Web & Security Audit", st['DateLoc'])]
+        ], colWidths=col_w)
+        p_rsonline_en.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
+        story.append(p_rsonline_en)
+        story.append(Spacer(1, 0.75))
+        story.append(Paragraph("&bull; Engineered a self-service patient registration portal and administrative queue dashboard, conducted manual SAST security audits mitigating critical SQL injection vectors (CVSS 9.8) via PDO Prepared Statements architecture adhering to OWASP Top 10 and data privacy regulations (UU PDP 27/2022).", st['Bullet']))
+        story.append(Spacer(1, 1.5))
+
+        p4 = Table([
+            [Paragraph("<b>RTConnect — Digital Community Administration & Public Validator</b>", st['JobTitle']), Paragraph("2026", st['DateLoc'])],
+            [Paragraph("PHP Fullstack &bull; MySQL (15+ Relational Tables) &bull; Bootstrap 5 &bull; QR Validator", st['Company']), Paragraph("E-Government", st['DateLoc'])]
+        ], colWidths=col_w)
+        p4.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
+        story.append(p4)
         story.append(Spacer(1, 0.75))
         story.append(Paragraph("&bull; Developed a web-based smart community management system streamlining dues collection, real-time ledger auditing, and automated official resident certificates with public QR verification.", st['Bullet']))
 
         if pages == 2:
             story.append(Spacer(1, 1.5))
-            p4 = Table([
+            p5 = Table([
                 [Paragraph("<b>CIT-TPRO: Convolution Interactive Transformer Deep Learning</b>", st['JobTitle']), Paragraph("2026", st['DateLoc'])],
                 [Paragraph("Python &bull; PyTorch &bull; Linear Self-Attention O(N) &bull; EEG Biomedical Signal Fusion", st['Company']), Paragraph("AI Research", st['DateLoc'])]
             ], colWidths=col_w)
-            p4.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
-            story.append(p4)
+            p5.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0.5)]))
+            story.append(p5)
             story.append(Spacer(1, 0.75))
             story.append(Paragraph("&bull; Investigated hybrid Transformer architectures with linear attention O(N) and PSD+DE feature fusion for emotion recognition on benchmark EEG datasets (DEAP, DREAMER).", st['Bullet']))
 
@@ -338,12 +382,12 @@ def build_black_ats_cv(lang='id', pages=2):
         # Skills (EN)
         story.extend(add_sec("Technical Skills Matrix"))
         skills = [
-            ("Programming Languages:", "PHP (8.x), Go (Golang 1.22), JavaScript (ES6+), Python, SQL, HTML5, CSS3"),
+            ("Programming Languages:", "PHP (8.x), Go (Golang 1.22), JavaScript (ES6+), Python, Bash/Shell, SQL, HTML5, CSS3"),
             ("Frameworks & Libraries:", "Laravel 12.x, CodeIgniter 3 MVC, GoFiber v2, Tailwind CSS v3, Bootstrap 5, jQuery, Blade"),
             ("Databases & Storage:", "MySQL, MariaDB, Oracle Database (OCI8), MongoDB Atlas (NoSQL), SQLite, ADODB Driver"),
             ("QA & Security Standards:", "PHPUnit 11 (TDD/Automated Testing), OWASP Top 10 Mitigation, CSRF, XSS Escaping, IDOR"),
-            ("Networking & Infrastructure:", "BNSP Certified Network Technician, TCP/IP, IP Addressing, Switching, Structured Cabling"),
-            ("Tools & Methodologies:", "Git, GitHub, RESTful API, Postman, Swagger/OpenAPI, Composer, NPM, Linux Environment")
+            ("Systems & Networking:", "Linux OS (CachyOS, CLI, Bash Scripting), BNSP Network Technician, TCP/IP, Switching"),
+            ("Tools & Methodologies:", "Git, GitHub, RESTful API, Postman, Swagger/OpenAPI, Composer, NPM, Linux CLI")
         ]
         for cat, val in skills:
             sk_row = Table([[Paragraph(cat, st['SkillCat']), Paragraph(val, st['SkillVal'])]], colWidths=[135, 400] if pages == 1 else [135, 396])
@@ -442,9 +486,9 @@ def build_black_master_portfolio(lang='id'):
         p_img.append(Image('foto_profil.jpeg', width=110, height=145))
 
     bio_text = (
-        "Yoginara Pratama Sitorus adalah Software Engineer dan Fullstack Developer berlatar belakang Sarjana Terapan Komputer (S.Tr.Kom) dari Universitas Logistik dan Bisnis Internasional (ULBI) dengan IPK 3,56. Menguasai arsitektur backend berskala korporat (Laravel 12, CodeIgniter 3, Golang Fiber), optimasi kueri basis data relasional (MySQL, Oracle OCI8) dan NoSQL (MongoDB), pengujian mutu otomatis (TDD PHPUnit 11), kepatuhan keamanan OWASP Top 10, serta memegang lisensi resmi BNSP Teknisi Muda Jaringan Komputer."
+        "Yoginara Pratama Sitorus adalah Software Engineer dan Fullstack Developer berlatar belakang Sarjana Terapan Komputer (S.Tr.Kom) dari Universitas Logistik dan Bisnis Internasional (ULBI) dengan IPK 3,56. Menguasai arsitektur backend berskala korporat (Laravel 12, CodeIgniter 3, Golang Fiber), sistem Linux (CachyOS), optimasi kueri basis data relasional (MySQL, Oracle OCI8) dan NoSQL (MongoDB), pengujian mutu otomatis (TDD PHPUnit 11), kepatuhan keamanan OWASP Top 10, serta memegang lisensi resmi BNSP Teknisi Muda Jaringan Komputer."
         if lang == 'id' else
-        "Yoginara Pratama Sitorus is a Software Engineer and Full-Stack Developer holding an Applied Bachelor of Informatics Engineering degree from Universitas Logistik dan Bisnis Internasional (ULBI) with a 3.56 GPA. He specializes in enterprise backend architecture (Laravel 12, CodeIgniter 3, Golang Fiber), database query optimization (MySQL, Oracle OCI8, MongoDB), automated test-driven development (PHPUnit 11), OWASP Top 10 security mitigation, and holds official BNSP Network Technician certification."
+        "Yoginara Pratama Sitorus is a Software Engineer and Full-Stack Developer holding an Applied Bachelor of Informatics Engineering degree from Universitas Logistik dan Bisnis Internasional (ULBI) with a 3.56 GPA. He specializes in enterprise backend architecture (Laravel 12, CodeIgniter 3, Golang Fiber), Linux OS (CachyOS), database query optimization (MySQL, Oracle OCI8, MongoDB), automated test-driven development (PHPUnit 11), OWASP Top 10 security mitigation, and holds official BNSP Network Technician certification."
     )
 
     p_box = [
@@ -454,7 +498,7 @@ def build_black_master_portfolio(lang='id'):
             [
                 Paragraph("<b>Backend Engineering:</b><br/>&bull; Laravel 12 Enterprise<br/>&bull; CodeIgniter 3 MVC<br/>&bull; Golang 1.22 & GoFiber<br/>&bull; RESTful Microservices", pst['Body']),
                 Paragraph("<b>Database & Storage:</b><br/>&bull; MySQL & MariaDB (3NF)<br/>&bull; Oracle Enterprise OCI8<br/>&bull; MongoDB Atlas (NoSQL)<br/>&bull; INNER JOIN Optimization", pst['Body']),
-                Paragraph("<b>QA & Infrastructure:</b><br/>&bull; PHPUnit 11 (Automated)<br/>&bull; OWASP Top 10 Mitigation<br/>&bull; BNSP Computer Network<br/>&bull; Git & GitHub CI/CD", pst['Body']),
+                Paragraph("<b>Infra & QA:</b><br/>&bull; Linux (CachyOS) & CLI<br/>&bull; BNSP Computer Network<br/>&bull; PHPUnit 11 Automated QA<br/>&bull; Git & GitHub CI/CD", pst['Body']),
             ]
         ], colWidths=[135, 135, 138], style=[
             ('BACKGROUND', (0,0), (-1,-1), BG_ALT_GRAY),
@@ -602,10 +646,10 @@ def build_black_master_portfolio(lang='id'):
         story.append(Spacer(1, 1.5))
 
     # ----------------------------------------------------
-    # HALAMAN 4: STUDI KASUS FRAMEWORK MODERN - CMI PORTAL (BAGIAN 1)
+    # HALAMAN 4: STUDI KASUS FRAMEWORK MODERN - CMI PORTAL LARAVEL 12 ENGINE
     # ----------------------------------------------------
     story.append(PageBreak())
-    h4_title = "3. Studi Kasus Framework Modern: CMI Portal Laravel 12 Engine (Bagian 1)" if lang == 'id' else "3. Modern Architecture Case Study: CMI Portal Laravel 12 Engine (Part 1)"
+    h4_title = "3. Studi Kasus Framework Modern: CMI Portal Laravel 12 Engine" if lang == 'id' else "3. Modern Architecture Case Study: CMI Portal Laravel 12 Engine"
     story.append(Paragraph(h4_title, pst['SectionTitle']))
     story.append(HRFlowable(width="100%", thickness=1, color=LINE_BLACK, spaceBefore=1, spaceAfter=4))
 
@@ -617,106 +661,233 @@ def build_black_master_portfolio(lang='id'):
         ('BACKGROUND', (0,0), (-1,-1), BG_LIGHT_GRAY),
         ('BOX', (0,0), (-1,-1), 1, BORDER_BLACK),
         ('INNERGRID', (0,0), (-1,-1), 0.5, BORDER_BLACK),
-        ('TOPPADDING', (0,0), (-1,-1), 3),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+        ('TOPPADDING', (0,0), (-1,-1), 2.5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 2.5),
         ('LEFTPADDING', (0,0), (-1,-1), 6),
         ('RIGHTPADDING', (0,0), (-1,-1), 6),
     ])
     story.append(cmi_meta)
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 3))
 
     img_cmi = []
     if os.path.exists('assets/thumb_cmi.png'):
-        img_cmi.append(Image('assets/thumb_cmi.png', width=130, height=180))
+        img_cmi.append(Image('assets/thumb_cmi.png', width=125, height=135))
 
     cmi_text_p1 = [
-        Paragraph("<b>A. Arsitektur Presentasi & Pemisahan Dependensi:</b>", pst['CardHeading']),
+        Paragraph("<b>A. Arsitektur Presentasi, Form Requests & Media Lifecycle:</b>", pst['CardHeading']),
         Paragraph(
-            "Sistem dibangun dengan pola Model-View-Controller (MVC) modular dan pemisahan layout yang tegas antara antarmuka publik (<code>PublicLayout</code>) dan dasbor terproteksi admin (<code>AppLayout</code>). Seluruh mutasi data diverifikasi oleh Form Request terisolasi dengan otentikasi berbasis Laravel Breeze dan proteksi CSRF otomatis."
+            "Sistem dibangun dengan pola Model-View-Controller (MVC) modular dan pemisahan layout antara antarmuka publik dan dasbor terproteksi admin. Seluruh mutasi diverifikasi oleh Form Request terisolasi dengan otentikasi berbasis Laravel Breeze dan proteksi CSRF. Unggahan media divalidasi biner MIME-type asli dan dikelola siklus hidupnya via Flysystem, secara otomatis menghapus berkas fisik lama dari disk saat artikel diperbarui atau dihapus."
             if lang == 'id' else
-            "Architected on modular Laravel 12 MVC patterns with strict separation between public presentation layouts and authenticated administrative dashboards, enforced through isolated Form Requests and CSRF middleware."
+            "Architected on modular Laravel 12 MVC patterns with strict separation between public presentation layouts and authenticated admin dashboards, enforced through isolated Form Requests and CSRF middleware. Media uploads are binary inspected and automatically purged from disk via Flysystem upon modification or deletion."
         , pst['Body']),
-        Spacer(1, 3),
+        Spacer(1, 2),
         Paragraph("<b>B. Algoritma Pembuatan Slug Unik Otomatis (Anti-Kolisi):</b>", pst['CardHeading']),
         Paragraph(
-            "Mengatasi crash database unik saat artikel memiliki judul identik, Yoginara membangun algoritma penomoran berurut otomatis: <code>generateUniqueSlug($judul, $ignoreId)</code>. Algoritma memastikan judul pertama menghasilkan slug bersih (misal: <code>belajar-laravel</code>), dan artikel berikutnya otomatis bertransformasi menjadi <code>belajar-laravel-1</code>, <code>belajar-laravel-2</code> tanpa error database."
+            "Mengatasi crash database unik saat artikel memiliki judul identik, dibangun algoritma penomoran berurut otomatis: <code>generateUniqueSlug($judul, $ignoreId)</code>. Algoritma memastikan judul pertama menghasilkan slug bersih (misal: <code>belajar-laravel</code>), dan artikel berikutnya otomatis bertransformasi menjadi <code>belajar-laravel-1</code>, <code>belajar-laravel-2</code> tanpa error database."
             if lang == 'id' else
             "Implemented an automated collision-free slug generation algorithm handling duplicate article titles via sequential indexing, preserving clean SEO URLs without unique constraint violations."
         , pst['Body']),
-        Spacer(1, 3),
-        Paragraph("<b>C. Manajemen Siklus Hidup Berkas Media (Flysystem):</b>", pst['CardHeading']),
-        Paragraph(
-            "Unggahan berkas gambar divalidasi biner MIME-type asli (maks 2MB), diberi nama hash acak, dan disimpan di storage publik terabstraksi. Saat artikel diperbarui atau dihapus, sistem secara proaktif menghapus berkas fisik lama dari disk via <code>Storage::disk('public')->delete()</code>, mengeliminasi sampah penyimpanan (orphaned files) secara permanen."
-            if lang == 'id' else
-            "Integrated automated media lifecycle management using Flysystem, enforcing binary MIME inspection and proactively purging obsolete storage files upon article modification or deletion."
-        , pst['Body'])
     ]
 
-    story.append(Table([[img_cmi, cmi_text_p1]], colWidths=[140, 383], style=[
+    story.append(Table([[img_cmi, cmi_text_p1]], colWidths=[135, 388], style=[
         ('VALIGN', (0,0), (-1,-1), 'TOP'),
         ('LEFTPADDING', (0,0), (-1,-1), 0),
         ('RIGHTPADDING', (0,0), (-1,-1), 0),
         ('TOPPADDING', (0,0), (-1,-1), 0),
         ('BOTTOMPADDING', (0,0), (-1,-1), 0),
     ]))
+    story.append(Spacer(1, 3))
 
-    # ----------------------------------------------------
-    # HALAMAN 5: STUDI KASUS CMI (BAGIAN 2) - QUERY OPTIMIZATION & QA
-    # ----------------------------------------------------
-    story.append(PageBreak())
-    h5_title = "3. Studi Kasus Framework Modern: CMI Portal Laravel 12 Engine (Bagian 2)" if lang == 'id' else "3. Modern Architecture Case Study: CMI Portal Laravel 12 Engine (Part 2)"
-    story.append(Paragraph(h5_title, pst['SectionTitle']))
-    story.append(HRFlowable(width="100%", thickness=1, color=LINE_BLACK, spaceBefore=1, spaceAfter=4))
-
-    story.append(Paragraph("<b>D. Optimasi Kueri Basis Data (Query Builder INNER JOIN):</b>", pst['CardHeading']))
+    story.append(Paragraph("<b>C. Optimasi Kueri Basis Data (Query Builder INNER JOIN vs ORM):</b>", pst['CardHeading']))
     story.append(Paragraph(
-        "Menjawab spesifikasi teknis penggabungan entitas artikel dan pengguna dengan performa tinggi, sistem mengimplementasikan Laravel Query Builder dengan klausul <code>INNER JOIN</code> terindeks B-Tree, aliasing kolom (<code>articles.judul AS title</code>), penyaringan status publikasi (status = 1), pengurutan kronologis terbalik (<code>created_at DESC</code>), serta paginasi 10 baris dengan preservasi kata kunci pencarian (<code>withQueryString()</code>). Alokasi memori PHP tetap stabil di &lt; 8 MB."
+        "Menjawab spesifikasi teknis penggabungan entitas artikel dan pengguna dengan performa tinggi, sistem mengimplementasikan Laravel Query Builder dengan klausul <code>INNER JOIN</code> terindeks B-Tree, aliasing kolom (<code>articles.judul AS title</code>), penyaringan status publikasi (status = 1), pengurutan kronologis terbalik (<code>created_at DESC</code>), serta paginasi 10 baris dengan preservasi kata kunci pencarian (<code>withQueryString()</code>). Alokasi memori PHP tetap stabil di &lt; 8 MB, menghilangkan overhead N+1 query bawaan ORM."
         if lang == 'id' else
-        "Engineered relational article-author reporting using Laravel Query Builder with indexed <code>INNER JOIN</code> clauses, column aliasing, publication status filtering, and 10-row pagination with query string preservation, maintaining RAM consumption strictly under 8 MB."
+        "Engineered relational article-author reporting using Laravel Query Builder with indexed <code>INNER JOIN</code> clauses, column aliasing, publication status filtering, and 10-row pagination with query string preservation, maintaining RAM consumption strictly under 8 MB without ORM N+1 query overhead."
     , pst['Body']))
     story.append(Spacer(1, 3))
 
-    q_eval = [
-        [Paragraph("<b>Metode Eksekusi</b>", pst['MetaKey']), Paragraph("<b>Performa Kueri</b>", pst['MetaKey']), Paragraph("<b>Integritas Relasi</b>", pst['MetaKey']), Paragraph("<b>Kesesuaian Spesifikasi</b>", pst['MetaKey'])],
-        [Paragraph("INNER JOIN (Terpilih)", pst['MetaVal']), Paragraph("Tinggi (B-Tree Index)", pst['Body']), Paragraph("Sangat Baik: Menghilangkan orphaned record", pst['Body']), Paragraph("100% Sesuai Spesifikasi Soal 2", pst['Body'])],
-        [Paragraph("LEFT JOIN", pst['MetaVal']), Paragraph("Sedang", pst['Body']), Paragraph("Berpotensi NULL jika foreign key putus", pst['Body']), Paragraph("Kurang tepat untuk data wajib relasi", pst['Body'])],
-        [Paragraph("Subquery / Eloquent N+1", pst['MetaVal']), Paragraph("Rendah (Overhead I/O)", pst['Body']), Paragraph("Tergantung eager loading relasi ORM", pst['Body']), Paragraph("Rawan bottleneck N+1 query", pst['Body'])],
-    ]
-    story.append(Table(q_eval, colWidths=[120, 110, 160, 133], style=[
-        ('BACKGROUND', (0,0), (-1,0), BG_LIGHT_GRAY),
-        ('BOX', (0,0), (-1,-1), 1, BORDER_BLACK),
-        ('INNERGRID', (0,0), (-1,-1), 0.5, BORDER_BLACK),
-        ('TOPPADDING', (0,0), (-1,-1), 2.5),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 2.5),
-        ('LEFTPADDING', (0,0), (-1,-1), 5),
-        ('RIGHTPADDING', (0,0), (-1,-1), 5),
-    ]))
-    story.append(Spacer(1, 4))
-
-    story.append(Paragraph("<b>E. Audit Keamanan OWASP Top 10 & Pengujian Mutu Otomatis (PHPUnit 11):</b>", pst['CardHeading']))
+    story.append(Paragraph("<b>D. Audit Keamanan OWASP Top 10 & Pengujian Mutu Otomatis (PHPUnit 11):</b>", pst['CardHeading']))
     cmi_qa_bullets = [
-        "<b>SQL Injection Prevention (A03:2021):</b> Seluruh interaksi database dieksekusi via Parameterized PDO Prepared Statements bebas concantenation query mentah.",
-        "<b>Cross-Site Scripting / XSS (A03:2021):</b> Template Blade mengeksekusi <code>htmlspecialchars()</code> secara otomatis pada kurung kurawal ganda.",
-        "<b>Cross-Site Request Forgery / CSRF (A01:2021):</b> Dilindungi token kriptografis <code>@csrf</code> dan verifikasi Synchronizer Token Pattern oleh kernel middleware.",
-        "<b>IDOR Broken Access Control (A01:2021):</b> Otorisasi kepemilikan ketat via <code>ArticlePolicy</code> (modifikasi langsung ID artikel menghasilkan respon 403 Forbidden).",
+        "<b>SQL Injection Prevention (A03:2021):</b> 100% interaksi database dieksekusi via Parameterized PDO Prepared Statements bebas concantenation mentah.",
+        "<b>XSS & CSRF Mitigation:</b> Template Blade mengeksekusi <code>htmlspecialchars()</code> otomatis dan verifikasi Synchronizer Token Pattern oleh kernel middleware.",
+        "<b>IDOR Broken Access Control (A01:2021):</b> Otorisasi kepemilikan ketat via <code>ArticlePolicy</code> (modifikasi paksa ID artikel menghasilkan respon 403 Forbidden).",
         "<b>Verifikasi Mutu 100% Green:</b> Sebanyak <b>39 pengujian unit & fitur (134 assertions)</b> berhasil lulus sempurna menggunakan PHPUnit 11 pada SQLite in-memory."
     ] if lang == 'id' else [
         "<b>SQL Injection Prevention:</b> 100% database interactions executed via Parameterized PDO Prepared Statements.",
-        "<b>Cross-Site Scripting (XSS):</b> Blade template engine executes automated <code>htmlspecialchars()</code> sanitization.",
-        "<b>CSRF Protection:</b> Cryptographic tokens and Synchronizer Token Pattern middleware defend all state-mutating requests.",
-        "<b>IDOR Prevention:</b> Strict ownership validation in <code>ArticlePolicy</code> restricts modifications to legitimate resource creators.",
+        "<b>XSS & CSRF Protection:</b> Blade automated <code>htmlspecialchars()</code> sanitization and Synchronizer Token Pattern middleware defend all requests.",
+        "<b>IDOR Broken Access Control:</b> Strict ownership validation in <code>ArticlePolicy</code> restricts modifications to legitimate resource creators.",
         "<b>100% Green Automated QA:</b> 39 automated unit and feature tests with 134 assertions completely passed using PHPUnit 11."
     ]
     for b in cmi_qa_bullets:
         story.append(Paragraph(f"&bull; {b}", pst['BodyBullet']))
-        story.append(Spacer(1, 1))
+        story.append(Spacer(1, 0.75))
 
     # ----------------------------------------------------
-    # HALAMAN 6: STUDI KASUS MIKROSERVIS GOLANG (STEPUP & MANUKSHOP)
+    # HALAMAN 5: STUDI KASUS HEALTHCARE TECH - SIMRS MEDIKA TERPADU (MVP)
     # ----------------------------------------------------
     story.append(PageBreak())
-    h6_title = "4. Portofolio High-Performance Backend: Mikroservis Golang 1.22" if lang == 'id' else "4. High-Performance Backend Portfolio: Go (Golang 1.22) Microservices"
+    h5_title = "4. Studi Kasus Healthcare Tech: SIMRS Medika Terpadu (MVP)" if lang == 'id' else "4. Healthcare Technology Case Study: SIMRS Medika Integrated Suite (MVP)"
+    story.append(Paragraph(h5_title, pst['SectionTitle']))
+    story.append(HRFlowable(width="100%", thickness=1, color=LINE_BLACK, spaceBefore=1, spaceAfter=4))
+
+    simrs_meta = Table([
+        [Paragraph("<b>Proyek:</b> SIMRS Medika (Sistem Manajemen Rumah Sakit)", pst['MetaVal']), Paragraph("<b>Framework:</b> Laravel 12.x &bull; Tailwind CSS 4 &bull; Alpine.js &bull; Spatie RBAC", pst['MetaVal'])],
+        [Paragraph("<b>Standar Faskes:</b> Permenkes No. 24/2022 (RME) &bull; ICD-10 Codes", pst['MetaVal']), Paragraph("<b>Otentikasi:</b> Dual Auth &bull; Google OAuth 2.0 Whitelist Khusus Staf", pst['MetaVal'])],
+        [Paragraph("<b>Concurrency Safety:</b> Pessimistic Locking (lockForUpdate()) Farmasi", pst['MetaVal']), Paragraph("<b>Status Mutu:</b> 100% Passed (14 Tests &bull; 77 Assertions &bull; ~1.3 detik)", pst['MetaVal'])],
+    ], colWidths=[260, 263], style=[
+        ('BACKGROUND', (0,0), (-1,-1), BG_LIGHT_GRAY),
+        ('BOX', (0,0), (-1,-1), 1, BORDER_BLACK),
+        ('INNERGRID', (0,0), (-1,-1), 0.5, BORDER_BLACK),
+        ('TOPPADDING', (0,0), (-1,-1), 2.5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 2.5),
+        ('LEFTPADDING', (0,0), (-1,-1), 6),
+        ('RIGHTPADDING', (0,0), (-1,-1), 6),
+    ])
+    story.append(simrs_meta)
+    story.append(Spacer(1, 3))
+
+    img_rs = []
+    if os.path.exists('assets/thumb_simrs.png'):
+        img_rs.append(Image('assets/thumb_simrs.png', width=125, height=135))
+    elif os.path.exists('assets/thumb_rs.png'):
+        img_rs.append(Image('assets/thumb_rs.png', width=125, height=135))
+
+    simrs_text_p1 = [
+        Paragraph("<b>A. Alur Operasional Faskes Terpadu (Core State Machine):</b>", pst['CardHeading']),
+        Paragraph(
+            "SIMRS Medika menghubungkan seluruh siklus operasional rawat jalan fasilitas pelayanan kesehatan melalui mesin status terintegrasi: Front Office pendaftaran poli (<code>registered</code>) &rarr; Dokter Spesialis pemeriksaan RME (<code>in_consultation</code>) &rarr; Instalasi Farmasi dispensing obat (<code>waiting_pharmacy</code>) &rarr; Kasir Billing pembayaran tunai & kwitansi (<code>waiting_payment</code>)."
+            if lang == 'id' else
+            "SIMRS Medika unifies outpatient healthcare operations through an integrated finite state machine: Front Office registration (<code>registered</code>) &rarr; Specialist Doctor EMR consultation (<code>in_consultation</code>) &rarr; Pharmacy dispensing (<code>waiting_pharmacy</code>) &rarr; Cashier Billing (<code>waiting_payment</code>)."
+        , pst['Body']),
+        Spacer(1, 2),
+        Paragraph("<b>B. Standarisasi Rekam Medis Elektronik (RME ICD-10) & E-Prescription:</b>", pst['CardHeading']),
+        Paragraph(
+            "Mengadopsi Permenkes No. 24/2022 dengan pencatatan tanda vital terstruktur, diagnosa berkode baku internasional ICD-10, builder peresepan obat multi-item dinamis via Alpine.js, serta penguncian permanen catatan medis begitu dokter menyelesaikan sesi pemeriksaan (<code>finalized_at</code>)."
+            if lang == 'id' else
+            "Complies with Indonesian Health Ministry Regulation (Permenkes 24/2022), featuring structured vital signs logging, ICD-10 standardized diagnostic coding, Alpine.js dynamic multi-item e-prescriptions, and permanent record finalization locks (<code>finalized_at</code>)."
+        , pst['Body']),
+    ]
+
+    story.append(Table([[img_rs, simrs_text_p1]], colWidths=[135, 388], style=[
+        ('VALIGN', (0,0), (-1,-1), 'TOP'),
+        ('LEFTPADDING', (0,0), (-1,-1), 0),
+        ('RIGHTPADDING', (0,0), (-1,-1), 0),
+        ('TOPPADDING', (0,0), (-1,-1), 0),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 0),
+    ]))
+    story.append(Spacer(1, 3))
+
+    story.append(Paragraph("<b>C. Keunggulan Arsitektur: Concurrency Control & Enterprise Whitelist:</b>", pst['CardHeading']))
+    story.append(Paragraph(
+        "&bull; <b>Pessimistic Locking (lockForUpdate()) pada Farmasi:</b> Mengeliminasi risiko <i>race condition</i> atau stok minus saat terjadi lonjakan transaksi bersamaan melalui pemotongan stok obat atomik terproteksi transaksi database ACID: <code>Medicine::where('id', $id)-&gt;lockForUpdate()-&gt;firstOrFail()</code>.<br/>"
+        "&bull; <b>Enterprise Whitelist Google OAuth 2.0:</b> Memblokir registrasi akun liar; hanya staf medis yang alamat emailnya telah didaftarkan terlebih dahulu oleh Administrator pada Spatie RBAC yang diizinkan masuk ke sistem data medis.<br/>"
+        "&bull; <b>Email Transaksional Gmail SMTP:</b> Fitur reset kata sandi terintegrasi langsung dengan server SMTP Google menggunakan token keamanan bertenggat 60 menit dan proteksi anti-spam rate limiter."
+        if lang == 'id' else
+        "&bull; <b>Pessimistic Locking (lockForUpdate()) in Pharmacy:</b> Eliminates race conditions and negative inventory during concurrent prescription dispensing via atomic ACID database transactions.<br/>"
+        "&bull; <b>Enterprise Google OAuth 2.0 Whitelisting:</b> Blocks unauthorized public logins; only clinical staff whose emails were pre-registered by Admins via Spatie RBAC are granted system access.<br/>"
+        "&bull; <b>Transactional Gmail SMTP:</b> Secured password reset tokens expiring in 60 minutes with anti-spam rate limiting."
+    , pst['BodyBullet']))
+    story.append(Spacer(1, 3))
+
+    story.append(Paragraph("<b>D. Front Office, Billing Kasir & Verifikasi Pengujian Otomatis (PHPUnit/Pest):</b>", pst['CardHeading']))
+    simrs_qa_bullets = [
+        "<b>Standarisasi No. RM & Validasi NIK:</b> Generator otomatis format unik seumur hidup <code>RM-YYYYMM-XXXX</code> dan validasi integritas NIK 16 digit terindeks kependudukan.",
+        "<b>Agregasi Tagihan Kasir Otomatis:</b> Perhitungan instan total biaya poli dokter + harga resep terkunci dengan kalkulator kembalian dan kwitansi resmi siap cetak.",
+        "<b>Verifikasi Mutu 100% Green:</b> Rangkaian <b>14 test cases (77 assertions)</b> lulus sempurna dalam ~1.3 detik, mencakup pengujian alur penuh (<code>SimrsFullHttpWorkflowTest</code>), logika stok terkunci (<code>SimrsBusinessLogicTest</code>), dan proteksi login (<code>AuthenticationTest</code>)."
+    ] if lang == 'id' else [
+        "<b>Standardized MRN & 16-Digit NIK:</b> Automated unique lifetime medical record generator <code>RM-YYYYMM-XXXX</code> with unique indexed national identity validation.",
+        "<b>Automated Billing & Invoice Receipts:</b> Real-time aggregation of consultation fees and locked prescription prices with cash change computation and print-ready receipts.",
+        "<b>100% Green Automated Test Suite:</b> 14 test cases with 77 assertions completely passed in ~1.3 seconds across full workflows, pessimistic locking logic, and multi-role auth."
+    ]
+    for b in simrs_qa_bullets:
+        story.append(Paragraph(f"&bull; {b}", pst['BodyBullet']))
+        story.append(Spacer(1, 0.75))
+
+    # ----------------------------------------------------
+    # HALAMAN 6: STUDI KASUS AUDIT KEAMANAN SIBER - RS ONLINE & REFACTORING PDO
+    # ----------------------------------------------------
+    story.append(PageBreak())
+    h6_title = "5. Studi Kasus Audit Keamanan Siber: RS Online & Refactoring PDO" if lang == 'id' else "5. Cybersecurity Audit Case Study: RS Online & PDO Hardening"
     story.append(Paragraph(h6_title, pst['SectionTitle']))
+    story.append(HRFlowable(width="100%", thickness=1, color=LINE_BLACK, spaceBefore=1, spaceAfter=4))
+
+    rs_meta = Table([
+        [Paragraph("<b>Proyek:</b> Sistem Informasi & Pendaftaran Pasien RS Online", pst['MetaVal']), Paragraph("<b>Arsitektur:</b> PHP &bull; MariaDB &bull; PDO Prepared Statements", pst['MetaVal'])],
+        [Paragraph("<b>Audit Keamanan:</b> SAST Vulnerability Assessment &bull; OWASP Top 10", pst['MetaVal']), Paragraph("<b>Regulasi Privasi:</b> UU Perlindungan Data Pribadi (UU PDP No. 27/2022)", pst['MetaVal'])],
+        [Paragraph("<b>Temuan Kerentanan:</b> SQL Injection Kritis (CVSS: 9.8) Dimutasi 100%", pst['MetaVal']), Paragraph("<b>Pola Rekayasa:</b> Database Singleton &amp; Patient Repository Pattern", pst['MetaVal'])],
+    ], colWidths=[260, 263], style=[
+        ('BACKGROUND', (0,0), (-1,-1), BG_LIGHT_GRAY),
+        ('BOX', (0,0), (-1,-1), 1, BORDER_BLACK),
+        ('INNERGRID', (0,0), (-1,-1), 0.5, BORDER_BLACK),
+        ('TOPPADDING', (0,0), (-1,-1), 2.5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 2.5),
+        ('LEFTPADDING', (0,0), (-1,-1), 6),
+        ('RIGHTPADDING', (0,0), (-1,-1), 6),
+    ])
+    story.append(rs_meta)
+    story.append(Spacer(1, 3))
+
+    img_rsonline = []
+    if os.path.exists('assets/thumb_rs.png'):
+        img_rsonline.append(Image('assets/thumb_rs.png', width=125, height=135))
+
+    rs_text_p1 = [
+        Paragraph("<b>A. Latar Belakang & Digitalisasi Pendaftaran Pasien Mandiri:</b>", pst['CardHeading']),
+        Paragraph(
+            "RS Online dikembangkan untuk mendigitalisasi loket pendaftaran rawat jalan dan administrasi poliklinik rumah sakit. Memungkinkan calon pasien menginput identitas, kontak, dan keluhan klinis secara mandiri dari smartphone, serta menyediakan dashboard administrasi terpusat untuk verifikasi antrean dan data kunjungan secara real-time."
+            if lang == 'id' else
+            "RS Online digitizes outpatient intake and polyclinic queue administration. It empowers patients to submit identities, contact records, and clinical complaints via smartphone, providing administrative staff with a centralized dashboard for real-time queue auditing."
+        , pst['Body']),
+        Spacer(1, 2),
+        Paragraph("<b>B. Temuan Audit Kerentanan SAST (Celah Kritis SQLi CVSS 9.8):</b>", pst['CardHeading']),
+        Paragraph(
+            "Evaluasi kode manual (Static Application Security Testing) mengidentifikasi celah kerentanan kritis pada skrip prosedural <code>functions.php</code>. Variabel parameter input pengguna langsung dikonkatenasikan ke kueri SQL mentah tanpa sanitasi pada fungsi <code>cari()</code>, <code>tambah()</code>, dan <code>ubah()</code>, membuka risiko kebocoran data rekam medis pasien."
+            if lang == 'id' else
+            "Manual SAST audits revealed critical SQL Injection vulnerabilities in legacy procedural scripts (<code>functions.php</code>). Unsanitized user inputs concatenated into raw SQL queries across search and mutation functions exposed sensitive patient records to data breaches."
+        , pst['Body']),
+    ]
+
+    story.append(Table([[img_rsonline, rs_text_p1]], colWidths=[135, 388], style=[
+        ('VALIGN', (0,0), (-1,-1), 'TOP'),
+        ('LEFTPADDING', (0,0), (-1,-1), 0),
+        ('RIGHTPADDING', (0,0), (-1,-1), 0),
+        ('TOPPADDING', (0,0), (-1,-1), 0),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 0),
+    ]))
+    story.append(Spacer(1, 3))
+
+    story.append(Paragraph("<b>C. Cetak Biru Refactoring Arsitektur: Singleton PDO & Repository Pattern:</b>", pst['CardHeading']))
+    story.append(Paragraph(
+        "Sebagai langkah mitigasi fundamental sesuai standar OWASP A03:2021 dan amanat UU PDP No. 27 Tahun 2022, lapisan akses data direkayasa ulang menggunakan arsitektur modern berorientasi objek:<br/>"
+        "&bull; <b>Singleton Connection (Database.php):</b> Mengelola koneksi database terpusat via PDO dengan parameter koneksi aman UTF-8 dan mode penanganan kesalahan <code>PDO::ERRMODE_EXCEPTION</code>.<br/>"
+        "&bull; <b>Patient Repository (PatientRepository.php):</b> Mengenkapsulasi seluruh operasi database ke dalam metode terisolasi yang mengeksekusi 100% Parameterized PDO Prepared Statements (<code>:kw1</code>, <code>:nik</code>), mengeliminasi risiko injeksi SQL secara permanen."
+        if lang == 'id' else
+        "To mitigate vulnerabilities under OWASP A03:2021 and Indonesian Data Protection Law (UU PDP 27/2022), the data access layer was refactored using object-oriented architectural patterns:<br/>"
+        "&bull; <b>Singleton Connection (Database.php):</b> Centralizes PDO database connections with UTF-8 encoding and robust <code>PDO::ERRMODE_EXCEPTION</code> error handling.<br/>"
+        "&bull; <b>Patient Repository (PatientRepository.php):</b> Encapsulates data queries into isolated methods executing 100% Parameterized PDO Prepared Statements, permanently neutralizing SQL injection vectors."
+    , pst['BodyBullet']))
+    story.append(Spacer(1, 3))
+
+    story.append(Paragraph("<b>D. Kepatuhan Regulasi UU PDP & Rencana Skalabilitas Enterprise:</b>", pst['CardHeading']))
+    rs_qa_bullets = [
+        "<b>Perlindungan Data Medis Sensitif:</b> Menjamin integritas data kependudukan (NIK 16 digit dan identitas kontak) terlindungi dari ekstraksi data massal tanpa hak.",
+        "<b>Normalisasi Basis Data Relasional:</b> Restrukturisasi tabel <code>datapasien</code> dengan indeks unik pada kolom kunci untuk mencegah redundansi rekaman kunjungan.",
+        "<b>Peta Jalan Skalabilitas (Roadmap):</b> Perancangan fase hardening bertahap menuju arsitektur enterprise mencakup otentikasi multi-role (Admin, Loket, Dokter) dan migrasi API terstandarisasi."
+    ] if lang == 'id' else [
+        "<b>Sensitive Medical Data Protection:</b> Safeguards national identity numbers (16-digit NIK) and patient contacts against unauthorized batch exfiltration.",
+        "<b>Relational Schema Normalization:</b> Restructured <code>datapasien</code> table with unique indexed keys to eliminate patient record redundancy.",
+        "<b>Scalability Roadmap:</b> Outlined phased enterprise hardening milestones encompassing multi-role authentication and standardized REST API endpoints."
+    ]
+    for b in rs_qa_bullets:
+        story.append(Paragraph(f"&bull; {b}", pst['BodyBullet']))
+        story.append(Spacer(1, 0.75))
+
+    # ----------------------------------------------------
+    # HALAMAN 7: STUDI KASUS MIKROSERVIS GOLANG (STEPUP & MANUKSHOP)
+    # ----------------------------------------------------
+    story.append(PageBreak())
+    h7_golang_title = "6. Portofolio High-Performance Backend: Mikroservis Golang 1.22" if lang == 'id' else "6. High-Performance Backend Portfolio: Go (Golang 1.22) Microservices"
+    story.append(Paragraph(h7_golang_title, pst['SectionTitle']))
     story.append(HRFlowable(width="100%", thickness=1, color=LINE_BLACK, spaceBefore=1, spaceAfter=4))
 
     img_stepup = []
@@ -755,11 +926,11 @@ def build_black_master_portfolio(lang='id'):
     ]))
 
     # ----------------------------------------------------
-    # HALAMAN 7: SISTEM E-GOVERNMENT & KOMUNITAS (RTCONNECT & UD ABANG ADIK)
+    # HALAMAN 8: SISTEM E-GOVERNMENT & KOMUNITAS (RTCONNECT & UD ABANG ADIK)
     # ----------------------------------------------------
     story.append(PageBreak())
-    h7_title = "5. Portofolio E-Government & Komunitas: RTConnect & UD Abang Adik" if lang == 'id' else "5. Community Tech & E-Government Systems: RTConnect & UD Abang Adik"
-    story.append(Paragraph(h7_title, pst['SectionTitle']))
+    h8_comm_title = "7. Portofolio E-Government & Komunitas: RTConnect & UD Abang Adik" if lang == 'id' else "7. Community Tech & E-Government Systems: RTConnect & UD Abang Adik"
+    story.append(Paragraph(h8_comm_title, pst['SectionTitle']))
     story.append(HRFlowable(width="100%", thickness=1, color=LINE_BLACK, spaceBefore=1, spaceAfter=4))
 
     img_rt = []
@@ -798,11 +969,11 @@ def build_black_master_portfolio(lang='id'):
     ]))
 
     # ----------------------------------------------------
-    # HALAMAN 8: RISET DEEP LEARNING & SISTEM IOT (CIT-TPRO & CO2 AIRBOARD)
+    # HALAMAN 9: RISET DEEP LEARNING & SISTEM IOT (CIT-TPRO & CO2 AIRBOARD)
     # ----------------------------------------------------
     story.append(PageBreak())
-    h8_title = "6. Riset Kecerdasan Buatan & Sistem IoT: CIT-TPRO & CO2 AirBoard" if lang == 'id' else "6. Deep Learning AI Research & IoT Systems: CIT-TPRO & CO2 AirBoard"
-    story.append(Paragraph(h8_title, pst['SectionTitle']))
+    h9_ai_title = "8. Riset Kecerdasan Buatan & Sistem IoT: CIT-TPRO & CO2 AirBoard" if lang == 'id' else "8. Deep Learning AI Research & IoT Systems: CIT-TPRO & CO2 AirBoard"
+    story.append(Paragraph(h9_ai_title, pst['SectionTitle']))
     story.append(HRFlowable(width="100%", thickness=1, color=LINE_BLACK, spaceBefore=1, spaceAfter=4))
 
     ai_t = Table([
@@ -861,11 +1032,11 @@ def build_black_master_portfolio(lang='id'):
     story.append(more_sys)
 
     # ----------------------------------------------------
-    # HALAMAN 9: SERTIFIKASI PROFESI NASIONAL (BNSP RI)
+    # HALAMAN 10: SERTIFIKASI PROFESI NASIONAL (BNSP RI)
     # ----------------------------------------------------
     story.append(PageBreak())
-    h9_title = "7. Lisensi Resmi & Sertifikasi Kompetensi Nasional (BNSP RI)" if lang == 'id' else "7. Official National Competency Certification (BNSP RI)"
-    story.append(Paragraph(h9_title, pst['SectionTitle']))
+    h10_bnsp_title = "9. Lisensi Resmi & Sertifikasi Kompetensi Nasional (BNSP RI)" if lang == 'id' else "9. Official National Competency Certification (BNSP RI)"
+    story.append(Paragraph(h10_bnsp_title, pst['SectionTitle']))
     story.append(HRFlowable(width="100%", thickness=1, color=LINE_BLACK, spaceBefore=1, spaceAfter=4))
 
     img_bnsp = []
@@ -929,11 +1100,11 @@ def build_black_master_portfolio(lang='id'):
     ]))
 
     # ----------------------------------------------------
-    # HALAMAN 10: SERTIFIKASI GLOBAL, MATRIKS LENGKAP & KESIMPULAN
+    # HALAMAN 11: SERTIFIKASI GLOBAL, MATRIKS LENGKAP & KESIMPULAN
     # ----------------------------------------------------
     story.append(PageBreak())
-    h10_title = "8. Kredensial Global, Matriks Keahlian Lengkap & Kesiapan Kerja" if lang == 'id' else "8. Global Credentials, Complete Skills Matrix & Career Readiness"
-    story.append(Paragraph(h10_title, pst['SectionTitle']))
+    h11_cert_title = "10. Kredensial Global, Matriks Keahlian Lengkap & Kesiapan Kerja" if lang == 'id' else "10. Global Credentials, Complete Skills Matrix & Career Readiness"
+    story.append(Paragraph(h11_cert_title, pst['SectionTitle']))
     story.append(HRFlowable(width="100%", thickness=1, color=LINE_BLACK, spaceBefore=1, spaceAfter=4))
 
     g_certs = [
@@ -961,22 +1132,22 @@ def build_black_master_portfolio(lang='id'):
 
     story.append(Paragraph("<b>Matriks Keahlian Komprehensif (Technical Competency Matrix):</b>", pst['CardHeading']))
     full_skills = [
-        ("Bahasa Pemrograman:", "PHP 8.2+ (Expert), Go / Golang 1.22, JavaScript (ES6+), Python 3.12, SQL, HTML5, CSS3"),
+        ("Bahasa Pemrograman:", "PHP 8.2+ (Expert), Go / Golang 1.22, JavaScript (ES6+), Python 3.12, Bash / Shell Scripting, SQL, HTML5, CSS3"),
         ("Framework Backend:", "Laravel 12.x Engine, CodeIgniter 3 MVC, GoFiber v2 (FastHTTP), Blade Templating"),
         ("Basis Data & Storage:", "MySQL, MariaDB (3NF Normalization), Oracle Database (OCI8), MongoDB Atlas (NoSQL), Flysystem"),
         ("Frontend & UI/UX:", "Tailwind CSS v3, Bootstrap 5 Responsive, jQuery, DataTables, Select2, Responsive Web Design"),
         ("Security & Governance:", "OWASP Top 10 Mitigation (CSRF, XSS, SQLi, IDOR), ISO 31000:2018 ERM, SPI Audit Compliance"),
         ("Testing & Quality Assurance:", "PHPUnit 11 (TDD & Automated Unit/Feature Tests), Postman API Testing, Swagger OpenAPI"),
-        ("Infrastruktur & Jaringan:", "BNSP Certified Network Technician, TCP/IP, IP Addressing, VLAN Switch, Cabling, Linux Server"),
+        ("Sistem Operasi & Jaringan:", "Linux OS (CachyOS, CLI, Shell / Bash Scripting, System Mgmt), BNSP Network Technician, TCP/IP, Switching"),
         ("Tools & Metodologi:", "Git, GitHub CI/CD Workflow, Composer, NPM, Vite, RESTful API Microservices, Scrum/Agile")
     ] if lang == 'id' else [
-        ("Programming Languages:", "PHP 8.2+ (Expert), Go / Golang 1.22, JavaScript (ES6+), Python 3.12, SQL, HTML5, CSS3"),
+        ("Programming Languages:", "PHP 8.2+ (Expert), Go / Golang 1.22, JavaScript (ES6+), Python 3.12, Bash / Shell Scripting, SQL, HTML5, CSS3"),
         ("Backend Frameworks:", "Laravel 12.x Engine, CodeIgniter 3 MVC, GoFiber v2 (FastHTTP), Blade Templating"),
         ("Databases & Storage:", "MySQL, MariaDB (3NF Normalization), Oracle Database (OCI8), MongoDB Atlas (NoSQL), Flysystem"),
         ("Frontend & UI/UX:", "Tailwind CSS v3, Bootstrap 5 Responsive, jQuery, DataTables, Select2, Responsive Web Design"),
         ("Security & Governance:", "OWASP Top 10 Mitigation (CSRF, XSS, SQLi, IDOR), ISO 31000:2018 ERM, SPI Audit Compliance"),
         ("Testing & QA:", "PHPUnit 11 (TDD & Automated Unit/Feature Tests), Postman API Testing, Swagger OpenAPI"),
-        ("Infrastructure & Network:", "BNSP Certified Network Technician, TCP/IP, IP Addressing, VLAN Switch, Cabling, Linux Server"),
+        ("Operating Systems & Network:", "Linux OS (CachyOS, CLI, Shell / Bash Scripting, System Mgmt), BNSP Network Technician, TCP/IP, Switching"),
         ("Tools & Methodologies:", "Git, GitHub CI/CD Workflow, Composer, NPM, Vite, RESTful API Microservices, Scrum/Agile")
     ]
     for c, v in full_skills:
@@ -1010,8 +1181,8 @@ def build_black_master_portfolio(lang='id'):
 
     doc.build(story)
     doc_fitz = fitz.open(filename)
-    print(f"Generated {filename}: {len(doc_fitz)} page(s) (Target: 10)")
-    assert len(doc_fitz) == 10, f"Error: {filename} has {len(doc_fitz)} pages instead of 10"
+    print(f"Generated {filename}: {len(doc_fitz)} page(s) (Target: 11)")
+    assert len(doc_fitz) == 11, f"Error: {filename} has {len(doc_fitz)} pages instead of 11"
     return filename
 
 # ==========================================
